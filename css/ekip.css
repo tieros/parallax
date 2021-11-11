@@ -1,0 +1,144 @@
+/* html kısmı 
+            <div class="ekip-box">
+              <div class="about-title">
+                  <h2>EKİBİMİZ</h2>
+                  <div class="title-underline about-title-underline">
+                    <hr class="shine2">
+                  </div>
+                </div>
+              
+              <div class="card-container">
+                <div class="card-box">
+                  <div class="card-picture">
+                    <img class="card-img" src="/pic/Latif.jpeg" alt="">
+                  </div>
+                  <div class="card-title">Latif Çandır</div>
+                  <div class="card-desc">Co-Founder</div>
+                  <div class="card-buttons">
+                    <img class="card-btn" src="/icons attribution/email_128.png" alt="">
+                  </div>
+                </div>
+                <div class="card-box">
+                  <div class="card-picture">
+                    <img class="card-img" src="/pic/Elif.jpg" alt="">
+                  </div>
+                  <div class="card-title">Elifsu Tanyeri</div>
+                  <div class="card-desc">Co-Founder</div>
+                  <div class="card-buttons">
+                    <img class="card-btn" src="/icons attribution/email_128.png" alt="">
+                  </div>
+                </div>
+                <div class="card-box">
+                  <div class="card-picture">
+                    <img class="card-img" src="/pic/Yasin.jpeg" alt="">
+                  </div>
+                  <div class="card-title">Yasin Kaya</div>
+                  <div class="card-desc">Co-Founder</div>
+                  <div class="card-buttons">
+                    <img class="card-btn" src="/icons attribution/email_128.png" alt="">
+                  </div>
+                </div>
+              </div>
+          </div>
+*/
+.ekip-box {
+  
+    width: 100%;
+    height: 100%;
+    padding: 20px 20px 50px 20px;
+  }
+  
+  @media (max-width: 992px) {
+    .ekip-box {
+      /* display: flex; */
+      /* flex-wrap: nowrap; */
+      height: 100%;
+      /* overflow-x: auto !important; */
+      width: auto;
+      padding: 0;
+      height: auto;
+    }
+  }
+  
+  
+  .card-container {
+    display: flex;
+    width: 100%;
+  }
+  
+  @media (max-width: 992px) {
+    .card-container {
+      /* display: flex; */
+      /* flex-wrap: nowrap; */
+      height: 100%;
+      /* overflow-x: auto !important; */
+      width: auto;
+    }
+  }
+  .card-box {
+    z-index: 0;
+    position: relative;
+    background: rgba(42, 42, 44, 0.315);
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.13);
+    padding: 40px;
+    box-sizing: border-box;
+    transition: box-shadow 0.2s ease, transform 0.2s ease, z-index 0s 0.2s ease;
+    width: 33%;
+    height: 100%;
+  }
+  
+  .card-box:before {
+    content: "";
+    display: block;
+  
+  }
+  .card-box:hover {
+    z-index: 1;
+    box-shadow: 0 8px 50px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+    transition: box-shadow 0.2s ease, transform 0.2s ease, z-index 0s 0s ease;
+  }
+  .card-box:hover .card-btn {
+    margin: 16px 0 0;
+    opacity: 1;
+  }
+  
+  .card-picture {
+    width: 98px;
+    height: 98px;
+    border-radius: 100%;
+    margin: 0 auto 40px;
+    overflow: hidden;
+  }
+  .card-img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .card-title {
+    color: #838370;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    text-align: center;
+    height: 30px;
+  }
+  
+  .card-desc {
+    color: #58584d;
+    font-size: 10px;
+    text-align: center;
+  }
+  
+  .card-buttons {
+   align-items: center;
+   display: flex;
+  }
+  
+  .card-btn {
+    width: 20px;
+    height: 20px;
+    opacity: 0.5;
+    display: flex;
+    cursor: pointer;
+  }

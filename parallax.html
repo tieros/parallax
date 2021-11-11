@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Parallax Images Scroll</title>
+  <script src="js\jquery.js" type="text/javascript"></script>
+  <script src="js\jquery.nicescroll.min.js" type="text/javascript"></script>
+  <script src="js\parallaxImg.js" type="text/javascript"></script>
+  <link rel="stylesheet" type="text/css" href="css\style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css\animate.css">
+  <link href="https://fonts.googleapis.com/css?family=Orbitron&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <script type="text/javascript">
+    $(document).on("ready", function() {
+      var parallaxSettings = {
+        initialOpacity: 1, //from 0 to 1, e.g. 0.34 is a valid value. 0 = transparent, 1 = Opaque
+        opacitySpeed: 0.1, //values from 0.01 to 1 -> 0.01: slowly appears on screen; 1: appears as soon as the user scrolls 1px
+        pageLoader: true
+      };
+      parallaxImgScroll(parallaxSettings);
+    });
+  </script>  
+    <script src="js\wow.min.js"></script>
+    <script>
+  window.onload = function() {
+    var elements = document.getElementsByClassName("offsetme50");
+    var i;
+    for (i = 0; i < elements.length; i++) {
+        var offset = elements[i].clientHeight * .6;   //.5 = 50%
+        elements[i].setAttribute("data-wow-offset", offset);
+    }
+}
+    new WOW().init();
+//     $(".wow").each(function() {
+// var wowHeight = $(this).height();
+// $(this).attr("data-wow-offset", wowHeight);
+// });
+    </script> 
+</head>
+<body>    
+    
+      <nav class="menu">
+        <ul>
+          <div class="marka">Perseid</div>
+          <a href="#"><li>Ana Sayfa</li></a>
+          <a class="cozumlerimiz" href="#"><li>
+          
+              <button class="cozum-btn" onclick="myFunction()">Çözümlerimiz
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="cozum-content" id="myDropdown">
+                <a href="#">Mobil Uygulama</a>
+                <a href="#">Web Uygulamaları</a>
+                <a href="#">Web Tasarım</a>
+                <a href="#">Grafik Tasarım</a>
+              </div>
+              
+            </li></a>
+          <a href="#whyus"><li>Neden Biz?</li></a>
+          <a href="#"><li>Hakkımızda</li></a>
+          <a href="#"><li>İletişim</li></a>
+          <a href="javascript:void(0);" class="icon" onclick="myFunctionNavbar()">
+              <i class="fa fa-bars"></i>
+            </a>
+        </ul>
+      </nav>
+
+          <section>
+
+    <article class="parallax-img-container">  
+
+
+
+  
+      <div class="main-title-box">      
+        <div class="main-title-inner">
+                <h1>Perseid</h1>
+                <h3>Innovation & Responsibility</h3> 
+                <a class="btn-download-init" href="#">View Our Work</a>
+        </div>
+      </div>
+     
+      <!-- images for parallax -->
+      <img id="milkyway" class="parallax-move" src="m4.png" alt="" data-ps-z-index="9" data-ps-speed="0.2" data-ps-vertical-position="250">
+      <img src="smoke-05.png" class="parallax-move" data-ps-z-index="1" data-ps-speed="1" data-ps-vertical-position="700" data-ps-horizontal-position="220" />
+      <img src="smoke-02.png" class="parallax-move" data-ps-z-index="1" data-ps-speed="0.5" data-ps-vertical-position="700" data-ps-horizontal-position="220" />
+      <img id="smoke4" src="smoke-04.png" class="parallax-move" data-ps-z-index="1" data-ps-speed="0.5" data-ps-vertical-position="500" data-ps-horizontal-position="620" />
+      <div id=service>
+        <div class="container">
+          <div class="row custom-col">
+            <div class="col-md-12"  style="margin-bottom:50px">
+              <div class="section-title-box">
+                <div class="section-title-inner" >
+                  <h2 class="generaltitle wow slideInLeft offsetme50" data-wow-duration="1s">ÇÖZÜMLERİMİZ</h2>
+                  <div class="title-underline">
+                    <hr class="style13">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-xs-3 custom-col">
+                <div class="service-item">
+                    <div class="service-item-icon">
+                    <img id="icon-mobile" src="ikon\yenimobile.png" alt="mobile">
+                    </div>
+                        <div class="service-item-title">
+                        <h3 id=service-title>Mobil Uygulama</h3>
+                        </div>
+                    <div class="service-item-desc">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, officiis.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-xs-3 custom-col">
+                <div class="service-item">
+                    <div class="service-item-icon">
+                    <img id=icon-web src="ikon\laptop-coding.png" alt="web">
+                    </div>
+                        <div class="service-item-title">
+                        <h3 id=service-title>Web Uygulamaları</h3>
+                        </div>
+                    <div class="service-item-desc">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, officiis.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-xs-3 custom-col">
+              <div class="service-item">
+                  <div class="service-item-icon">
+                  <img id="icon-design" src="ikon\webdesign.png" alt="mobile">
+                  </div>
+                      <div class="service-item-title">
+                      <h3 id=service-title>Web Tasarım</h3>
+                      </div>
+                  <div class="service-item-desc">
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, officiis.</p>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-3 col-xs-3 custom-col">
+            <div class="service-item">
+                <div class="service-item-icon">
+                <img id="icon-graphic" src="ikon\design.png" alt="mobile">
+                </div>
+                    <div class="service-item-title">
+                    <h3 id=service-title>Grafik Tasarım</h3>
+                    </div>
+                <div class="service-item-desc">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, officiis.</p>
+                </div>
+            </div>
+        </div>
+          </div>
+        </div>
+      </div>
+      <!--baştaki smokelar-->
+      <img id="topsmoke1" src="smoke-05.png" class="parallax-move" data-ps-z-index="7" data-ps-speed="1" data-ps-vertical-position="1200"/>
+      <img id="topsmoke2" src="smoke-06.png" class="parallax-move" data-ps-z-index="1" data-ps-speed="0.4" data-ps-vertical-position="1300"/>
+      <!-- diğer smokelar-->
+      <img src="smoke-05.png" class="parallax-move" data-ps-z-index="7" data-ps-speed="1" data-ps-vertical-position="600" data-ps-horizontal-position="0" />
+      <img id="smoke6" src="smoke-06.png" class="parallax-move" data-ps-z-index="1" data-ps-speed="0.4" data-ps-vertical-position="200" data-ps-horizontal-position="920" />
+      <img id="smoke6" src="smoke-06.png" class="parallax-move" data-ps-z-index="1" data-ps-speed="0.2" data-ps-vertical-position="-900" data-ps-horizontal-position="220" />
+      <img src="smoke-05.png" class="parallax-move" data-ps-z-index="1" data-ps-speed="0.5" data-ps-vertical-position="400" data-ps-horizontal-position="200" />
+      <img id="planet" src="myplanet6.png" class="parallax-move" data-ps-z-index="7" data-ps-speed="0.4" data-ps-vertical-position="600">
+      <img id="finish" src="galaxy-deneme4.png" class="parallax-move" data-ps-z-index="5" data-ps-speed="0.10" data-ps-vertical-position="-190">
+      
+      
+<div id="whyus">
+  <div class="container">
+    <div class="row">
+          <div class="col-12">
+            <div class="whytitle-box">
+              <div class="whytitle-inner">
+                <h2 class="generaltitle wow slideInLeft" data-wow-duration="1s">NEDEN BİZ?</h2>
+                <div class="title-underline">
+                  <hr class="shine">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="why-item">
+              <div class="why-item-icon">
+              <img class=why-icon src="ikon\innovation.png" alt="web">
+              </div>
+                  <div class="why-item-title">
+                  <h3 class=why-title>İnnovatif</h3>
+                  </div>
+              <div class="why-item-desc">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, officiis.</p>
+              </div>
+          </div>
+          </div>
+          <div class="col-3">                
+            <div class="why-item">
+            <div class="why-item-icon">
+            <img class=why-icon src="ikon\creative.png" alt="web">
+            </div>
+                <div class="why-item-title">
+                <h3 class=why-title>Yaratıcı</h3>
+                </div>
+            <div class="why-item-desc">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, officiis.</p>
+            </div>
+        </div></div>
+          <div class="col-3">
+              <div class="why-item">
+                  <div class="why-item-icon">
+                  <img class=why-icon src="ikon\sorumlu.png" alt="web">
+                  </div>
+                      <div class="why-item-title">
+                      <h3 class=why-title>Sorumlu</h3>
+                      </div>
+                  <div class="why-item-desc">
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, officiis.</p>
+                  </div>
+              </div>
+          </div>
+          <div class="col-3">              
+            <div class="why-item">
+              <div class="why-item-icon">
+              <img class=why-icon src="ikon\dinamik.png" alt="web">
+              </div>
+                  <div class="why-item-title">
+                  <h3 class=why-title>Genç</h3>
+                  </div>
+              <div class="why-item-desc">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, officiis.</p>
+              </div>
+          </div>
+      </div>
+    </div>
+        </div>
+    </div>
+</div>
+      
+
+</article>
+</section>
+
+
+
+
+  <div id="about">
+     <div class="container">
+       <div class="row">
+         <div class="col-md-12">
+            <div class="about-title wow slideInLeft" data-wow-duration="2s">
+                <h2>HAKKIMIZDA</h2>
+              </div>
+              <div class="title-underline about-title-underline">
+                 <hr class="shine2">
+              </div>
+              <div class="about-desc">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate incidunt blanditiis nam aperiam fuga repellendus aut ad molestiae quae explicabo? Eveniet eum accusamus vitae dignissimos ea laboriosam autem, sint quos reiciendis quas nihil explicabo cum officiis quasi, dolore repellendus! Dolores.</p>
+              </div>
+            </div>
+         </div>
+      </div> 
+
+<!--ekip-->
+<div class="container" style="margin-bottom: 4rem;">
+    <div class="about-title">
+        <h2>EKİBİMİZ</h2>
+        <div class="title-underline about-title-underline">
+          <hr class="shine2">
+        </div>
+      </div>
+    
+    <div class="card-container">
+      <div class="row">
+        <div class="col-4">
+      <div class="card-box">
+        <div class="card-picture">
+          <img class="card-img" src="pic/Latif.jpeg" alt="">
+        </div>
+        <div class="card-title">Latif Çandır</div>
+        <div class="card-desc">Co-Founder</div>
+        <div class="card-buttons">
+          <img class="card-btn" src="/icons attribution/email_128.png" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="card-box">
+        <div class="card-picture">
+          <img class="card-img" src="pic/Elif.jpg" alt="">
+        </div>
+        <div class="card-title">Elifsu Tanyeri</div>
+        <div class="card-desc">Co-Founder</div>
+        <div class="card-buttons">
+          <img class="card-btn" src="/icons attribution/email_128.png" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="card-box">
+        <div class="card-picture">
+          <img class="card-img" src="pic/Yasin.jpeg" alt="">
+        </div>
+        <div class="card-title">Yasin Kaya</div>
+        <div class="card-desc">Co-Founder</div>
+        <div class="card-buttons">
+          <img class="card-btn" src="/icons attribution/email_128.png" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<!--ekip bitti-->
+
+<!--percentage-->
+      <div class="container-fluid perc-container">
+         <div class="row">
+          <div class="col-md-12">
+            <div class="about-title">
+              <h2>DİL VE PROGRAMLAR</h2>
+            </div>
+            <div class="title-underline">
+              <hr class="shine2">
+            </div>
+          </div>
+            <div class="col-md-3">
+                <div class="perc-box">
+                  <div class="circle" id="circles-1"></div>
+                  <div class="perc-title">
+                    <h4>HTML5 & CSS3</h4>
+                  </div>
+                  <div class="perc-desc"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi!</p></div>
+                </div>
+              </div>
+          <div class="col-md-3">
+              <div class="perc-box">
+                  <div class="circle" id="circles-2"></div>
+                  <div class="perc-title">
+                    <h4>JS & JQUERY</h4>
+                  </div>
+                  <div class="perc-desc"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi!</p></div>
+                </div>
+              </div>
+      <div class="col-md-3">
+          <div class="perc-box">
+              <div class="circle" id="circles-3"></div>
+              <div class="perc-title">
+                <h4>REACT NATIVE</h4>
+              </div>
+              <div class="perc-desc"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi!</p></div>
+            </div>
+          </div>
+    <div class="col-md-3">
+        <div class="perc-box">
+            <div class="circle" id="circles-4"></div>
+            <div class="perc-title">
+              <h4>ADOBE PROGRAMLARI</h4>
+            </div>
+            <div class="perc-desc"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi!</p></div>
+          </div>
+        </div>
+</div>
+</div>
+  
+  
+<div id="contact">
+  <div class="container container-contact">
+    <div class="row">
+      <div class="col-md-6">
+        <h2>İLETİŞİM</h2>
+        <div class="form-box">
+            <div class="form">
+                <h1>Bize Yazın!</h1>
+                <div class="group">      
+                  <input type="text" required>
+                  <span class="highlight"></span>
+                  <label>Ad Soyad</label>
+                </div>
+                <div class="group">      
+                  <input type="text" required>
+                  <span class="highlight"></span>
+                  <label>E-mail</label>
+                </div>
+                <div class="group">      
+                    <input type="text" required>
+                    <span class="highlight"></span>
+                    <label>Mesajınız</label>
+                  </div>
+                <a class="send-btn">Gönder</a>
+              </div>
+            </div>
+          </div>
+      <div class="col-md-6"></div>
+    </div>
+  </div>
+</div>
+
+ <footer>
+    <p>made by Perseid</p>
+  </footer>
+
+</div>  <!--about'un divi-->
+ 
+
+
+
+
+
+<script src="js\circles.js"></script>
+<script src="js\script.js"></script>
+
+
+
+</body>
+</html>
